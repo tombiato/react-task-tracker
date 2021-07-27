@@ -28,18 +28,15 @@ const App = () => {
 	]);
 
 	// Delete single task
-	const deleteTask = id => {
-		setTasks(tasks.filter(task => task.id !== id));
-	};
+	const deleteTask = id => setTasks(tasks.filter(task => task.id !== id));
 
 	// Toggle reminder
-	const toggleReminder = id => {
+	const toggleReminder = id =>
 		setTasks(
 			tasks.map(task =>
 				task.id === id ? { ...task, reminder: !task.reminder } : task
 			)
 		);
-	};
 
 	return (
 		<div className='App'>
